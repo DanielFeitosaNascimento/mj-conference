@@ -20,6 +20,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
+import { ButtonLoading } from './button-loading'
 
 const schema = z.object({
   fullName: z.string().min(1, 'Nome completo é obrigatório'),
@@ -47,7 +48,7 @@ export default function ProfileForm() {
       rating: 20
     }
   })
-  const { handleSubmit, formState: { errors }, control, reset } = form
+  const { handleSubmit, formState: { errors, isLoading }, control, reset } = form
 
   const [rating, setRating] = useState<number[]>([20])
 
@@ -198,7 +199,11 @@ export default function ProfileForm() {
           )}
         />
 
-        <Button type="submit" className='w-64'>Enviar</Button>
+        {isLoading ? (
+          <ButtonLoading />
+        ) : (
+          <Button type="submit" className='w-72'>Enviar</Button>
+        )}
       </form>
     </Form>
   )

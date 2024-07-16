@@ -1,7 +1,6 @@
 "use client"
 import Footer from '@/components/footer'
 import { Header } from '@/components/header'
-import prisma from '@/lib/client'
 import { useEffect, useState } from 'react'
 
 export default function Responses() {
