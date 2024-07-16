@@ -1,6 +1,8 @@
 // src/app/api/responses/route.ts
-import prisma from "@/lib/client";
+import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
+
+const prisma = new PrismaClient();
 
 export async function GET() {
   try {
