@@ -48,7 +48,7 @@ export default function ProfileForm() {
       rating: 20
     }
   })
-  const { handleSubmit, formState: { errors, isLoading }, control, reset } = form
+  const { handleSubmit, formState: { errors, isSubmitting }, control, reset } = form
 
   const [rating, setRating] = useState<number[]>([20])
 
@@ -199,7 +199,7 @@ export default function ProfileForm() {
           )}
         />
 
-        {isLoading ? (
+        {isSubmitting ? (
           <ButtonLoading />
         ) : (
           <Button type="submit" className='w-72'>Enviar</Button>
