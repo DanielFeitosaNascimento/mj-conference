@@ -58,7 +58,7 @@ export default function Responses() {
                   )}
                   {response.attendedBy && (
                     <div className="flex md[768]: flex-col justify-between">
-                      <span className="font-bold text-lg">Quem atendeu:</span>
+                      <span className="font-bold text-lg">Quem foi o manto? / canela de fogo?</span>
                       <span>{response.attendedBy}</span>
                     </div>
                   )}
