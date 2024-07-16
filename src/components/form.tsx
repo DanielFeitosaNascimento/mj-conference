@@ -120,7 +120,6 @@ export default function ProfileForm() {
                     onCheckedChange={field.onChange as (checked: boolean) => void}
                     id="attendedBefore"
                   />
-                  <p className='font-extralight'>Sim/Não</p>
                 </div>
               </FormControl>
             </FormItem>
@@ -140,7 +139,6 @@ export default function ProfileForm() {
                     onCheckedChange={field.onChange as (checked: boolean) => void}
                     id="partOfChurch"
                   />
-                  <p className='font-extralight'>Sim/Não</p>
                 </div>
               </FormControl>
             </FormItem>

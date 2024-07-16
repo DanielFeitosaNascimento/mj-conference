@@ -1,8 +1,6 @@
 // src/app/api/submit/route.ts
+import prisma from "@/lib/client";
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -34,7 +32,6 @@ export async function POST(req: Request) {
       response,
     });
   } catch (error) {
-    console.log(error);
     return NextResponse.json(
       { error: "Failed to save response" },
       { status: 500 }

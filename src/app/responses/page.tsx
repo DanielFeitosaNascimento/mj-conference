@@ -1,27 +1,30 @@
 "use client"
-import { PrismaClient } from '@prisma/client'
 import Footer from '@/components/footer'
 import { Header } from '@/components/header'
+import prisma from '@/lib/client'
 import { useEffect, useState } from 'react'
-
-const prisma = new PrismaClient()
 
 export default function Responses() {
   const [responses, setResponses] = useState<any[]>([])
 
-  useEffect(() => {
-    fetchData()
-  }, [])
-
   const fetchData = async () => {
     try {
-      const fetchedResponses = await prisma.response.findMany()
-      setResponses(fetchedResponses)
+      const response = await fetch('/api/responses');
+      if (!response.ok) {
+        throw new Error('Failed to fetch responses');
+      }
+      const data = await response.json();
+      setResponses(data)
+      return data;
     } catch (error) {
-      console.error('Failed to fetch responses:', error)
-      setResponses([])
+      console.error('Error fetching responses:', error);
+      return [];
     }
-  }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   
   return (
     <div className='flex flex-col'>
