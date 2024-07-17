@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button"
 
 export function ButtonLoading() {
   return (
-    <Button disabled className="w-72">
+    <Button disabled className="w-full">
       <ReloadIcon className="mr-2 h-4 w-4  animate-spin" />
       ...Enviando
     </Button>
   )
 }
+ 

@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
           <div className='flex mt-2 justify-center'>
             <p>
-              ©️ MJ-conference ©️ 2024
+              ©️ MJ conference ©️ 2024
             </p>
           </div>
         </div>

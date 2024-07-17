@@ -64,22 +64,14 @@ export default function ProfileForm() {
         body: JSON.stringify(payload),
       })
       if (response.status === 200) {
-        const result = await response.json()
         toast({
-          title: `${payload.fullName} - Resposta salva com sucesso`,
-          description: `Agradecemos de coração o seu feedback! ${payload.fullName} você é especial para nós.`,
+          title: `${payload.fullName} - Resposta salva com sucesso!`,
+          description: `Glorificamos a Deus pela sua presença, esperamos que a oração que você recebeu tenha feito sentido. Até o ano que vem!!`,
           duration: 4500
         })
 
         reset()
         setRating([20])
-      } else {
-        const errorData = await response.json()
-        toast({
-          title: `${payload.fullName} - Erro ao salvar resposta!`,
-          description: `Erro: ${errorData.error}`,
-          duration: 4500
-        })
       }
     } catch (error) {
       toast({
@@ -202,7 +194,7 @@ export default function ProfileForm() {
         {isSubmitting ? (
           <ButtonLoading />
         ) : (
-          <Button type="submit" className='w-72'>Enviar</Button>
+          <Button type="submit" className='w-full'>Enviar</Button>
         )}
       </form>
     </Form>
