@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
     if (error) {
       console.error(`exec error: ${error}`);
       return NextResponse.json(
-        { message: "Error starting Prisma Studio" },
+        { message: "Error starting Prisma" },
         { status: 500 }
       );
     }
