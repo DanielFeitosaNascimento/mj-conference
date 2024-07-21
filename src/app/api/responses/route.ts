@@ -9,9 +9,6 @@ export async function GET() {
     const responses = await prisma.response.findMany();
     return NextResponse.json(responses);
   } catch (error) {
-    return NextResponse.json(
-      { error: "Failed to fetch responses" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to responses" }, { status: 500 });
   }
 }
